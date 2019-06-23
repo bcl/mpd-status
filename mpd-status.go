@@ -33,7 +33,6 @@ type cmdlineArgs struct {
 	Volume  bool // Show volume percentage 0-100
 	Elapsed bool // Show the duration:elapsed time
 	Width   int  // Maximum width
-	Debug   bool // Output debugging info
 }
 
 /* commandline defaults */
@@ -41,7 +40,6 @@ var cfg = cmdlineArgs{
 	Volume:  false,
 	Elapsed: false,
 	Width:   60,
-	Debug:   false,
 }
 
 /* parseArgs handles parsing the cmdline args and setting values in the global cfg struct */
@@ -49,7 +47,6 @@ func parseArgs() {
 	flag.BoolVar(&cfg.Volume, "volume", cfg.Volume, "Include the volume percentage 0-100")
 	flag.BoolVar(&cfg.Elapsed, "elapsed", cfg.Elapsed, "Include the duration:elapsed time")
 	flag.IntVar(&cfg.Width, "width", cfg.Width, "Maximum width of output")
-	flag.BoolVar(&cfg.Debug, "debug", cfg.Debug, "Output debug information")
 
 	flag.Parse()
 }
